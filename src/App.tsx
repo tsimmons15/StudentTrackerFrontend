@@ -1,14 +1,20 @@
-import React from 'react';
+import { Provider } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 
-import './App.css';
+
 import Navigation from './components/navigation/navigation';
+import { SeatingStore } from './stores/exam-store';
 
 function App() {
+
+
+
   return (
     <>
-      <Navigation />
-      <Outlet />
+      <Provider store={SeatingStore}>
+        <Navigation />
+        <Outlet />
+      </Provider>
     </>
   );
 }
